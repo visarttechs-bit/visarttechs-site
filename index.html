@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VisArt Techs</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #fff;
+        height: 100%;
+        width: 100%;
+      }
+      #loading {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        transition: opacity 0.4s ease;
+        z-index: 10;
+      }
+      #loading.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #e5e7eb;
+        border-top-color: #4b5563;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      #loading p {
+        margin-top: 16px;
+        font-family: system-ui, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #6b7280;
+      }
+      iframe {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loading">
+      <div class="spinner"></div>
+      <p>Yükleniyor...</p>
+    </div>
+    <iframe
+      src="https://visarttechs-visarttechs-demo-v1.hf.space"
+      title="VisArt Techs"
+      allow="clipboard-write"
+      allowfullscreen
+      loading="eager"
+      onload="document.getElementById('loading').classList.add('hidden')"
+    ></iframe>
+  </body>
+</html>
